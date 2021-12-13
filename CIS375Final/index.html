@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Based Estimation</title>
+    <script src="createCell.js"></script>
+    <script src="appendColumn.js"></script>
+    <script src="appendRow.js"></script>
+    <script src="deleteColumns.js"></script>
+    <script src="deleteRows.js"></script>
+    <script src="CreateTable.js"></script>
+    <style>
+        div#my-container input{padding:5px;font-size:12px !important;width:100px;margin:2px}
+        table#my-table{border-collapse:collapse;width:0%}
+        table#my-table td{width:50px;height:27px;border:1px solid #D3D3D3;text-align:center;padding:0;}
+        .append_row{color:black !important;background-color:#FFD6D6 !important;border:1px #ccc solid !important;}
+        .append_column{color:black !important;background-color:#D6FFD6 !important;border:1px #ccc solid !important;}
+        .delete{color:black !important;background-color:#eee !important;border:1px #ccc solid !important;}
+        .col{background-color:#D6FFD6 !important}
+        .row{background-color:#FFD6D6 !important}
+    </style>
+</head>
+<body>
+    <div id="my-container">
+    <center><br />
+    <input type="button" value="Add row" onclick="javascript:appendRow()" class="append_row"/><br />
+    <input type="button" value="Add column" onclick="javascript:appendColumn()" class="append_column"/><br />
+    <input type="button" value="Delete rows" onclick="javascript:deleteRows()" class="delete"/><br />
+    <input type="button" value="Delete columns" onclick="javascript:deleteColumns()" class="delete"/><br />
+    <input type="button" value="Delete both" onclick="javascript:deleteColumns();deleteRows()" class="delete"/></p>
+    <table id="my-table" align="center" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+    <td>Process-Based Whatever Tool</td>
+    </tr>
+    </table>
+    <p></center>
+    </div>
+</body>
+</html>
