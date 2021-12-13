@@ -10,7 +10,7 @@
     <script src="appendRow.js"></script>
     <script src="deleteColumns.js"></script>
     <script src="deleteRows.js"></script>
-    <script src="CreateTable.js"></script>
+    <script src="calculate.js"></script>
     <style>
         div#my-container input{padding:5px;font-size:12px !important;width:100px;margin:2px}
         table#my-table{border-collapse:collapse;width:0%}
@@ -31,12 +31,26 @@
             <input type="button" value="Add column" onclick="javascript:appendColumn()" class="append_column"/><br />
             <input type="button" value="Delete rows" onclick="javascript:deleteRows()" class="delete"/><br />
             <input type="button" value="Delete columns" onclick="javascript:deleteColumns()" class="delete"/><br />
-            <input type="button" value="Delete both" onclick="javascript:deleteColumns();deleteRows()" class="delete"/></p>
+            <input type="button" value="Calculate" onclick="javascript:calculate()" class="calculate"/></p>
             
             <table id="my-table" align="center" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                     <td>Process-Based Whatever Tool</td>
+                    <td>Activity></td>
                 </tr>
+                <tr>
+                    <td>Function</td>
+                    <td></td>
+                </tr>
+                <script>appendRow();</script>
+                <!-- <tr>
+                    <td>Total hours per task</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>% of Effort</td>
+                    <td></td>
+                </tr> -->
             </table>
         
         <p></center>

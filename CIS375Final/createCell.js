@@ -1,5 +1,5 @@
 // create DIV element and append to the table cell
-function createInputCell(cell, style) {
+function createInputTxtCell(cell, style) {
     var div = document.createElement('div'), // create DIV element
         input = document.createElement('input'); // create text node
     div.appendChild(input);                    // append text node to the DIV
