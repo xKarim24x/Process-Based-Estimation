@@ -6,4 +6,5 @@ function appendColumn() {
     for (i = 0; i < tbl.rows.length; i++) {
         createCell(tbl.rows[i].createInputCell(tbl.rows[i].cells.length), 'col');
     }
+    
 }
