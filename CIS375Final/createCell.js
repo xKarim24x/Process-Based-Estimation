@@ -8,12 +8,13 @@ function createInputTxtCell(cell, style) {
     cell.appendChild(div);                   // append DIV to the table cell
 }
 
-function createInputNbrCell(cell, num, style){
+function createInputNbrCell(cell, style){
     var div = document.createElement('div');
-    var num = document.createElement(num);
+    var num = document.createElement('input');
+    num.setAttribute('type', 'number');
     div.appendChild(num);
-    div.setAttribute('class', style)
-    div.setAttribute('className', style)
+    div.setAttribute('class', style);
+    div.setAttribute('className', style);
     cell.appendChild(div);
 }
 
@@ -21,7 +22,7 @@ function createTextCell(cell, text, style){
     var div = document.createElement('div');
     var txt = document.createTextNode(text);
     div.appendChild(txt);
-    div.setAttribute('class', style)
-    div.setAttribute('className', style)
+    div.setAttribute('class', style);
+    div.setAttribute('className', style);
     cell.appendChild(div);
 }
