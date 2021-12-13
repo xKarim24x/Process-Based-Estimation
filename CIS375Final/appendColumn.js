@@ -16,5 +16,4 @@ function appendColumn() {
             createInputTxtCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), 'col');
         }
     }
-    
 }
