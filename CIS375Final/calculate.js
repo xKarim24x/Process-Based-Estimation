@@ -4,6 +4,8 @@ function calculate(){
     var functionDataSum;
     var activityData = Array(numFunctions);
     var activityDataSum;
+    var totalData = Array(2);
+    var totalDataPercentage;
     var iD = "";
     var rowCount = 1;
     var colCount = 1;
@@ -43,7 +45,8 @@ function calculate(){
 
     for(let i = 0; i < tbl.rows[0].cells.length; i++)
     {
-        var activityDataSum = 0;
+        activityDataSum = 0;
+        functionDataSum = 0;
 
         if(i == 0){
             createTextCell(row.insertCell(i), "Total Hours per Activity", 'col');
@@ -53,20 +56,19 @@ function calculate(){
         }
         else if(i == tbl.rows[0].cells.length - 1)
         {
-            for(let j = 0; j < numFunctions; j++){
-                iD = colCount + "," + rowCount;
-                activityData[j] = parseFloat(tbl.rows[tbl.rows.length - 1].cells.item(colCount+1).innerText);
+            for(let j = 0; j < numActivities; j++){
+                functionData[j] = parseFloat(tbl.rows[tbl.rows.length-1].cells.item(colCount+1).innerText);
                 colCount++;
             }
 
-            for(let j = 0; j < numFunctions; j++){
-                activityDataSum = activityDataSum + activityData[j];
+            for(let j = 0; j < numActivities; j++){
+                functionDataSum = functionDataSum + functionData[j];
             }
 
             var cell = row.insertCell(i);
-            createTextCell(cell, activityDataSum, 'col');
+            createTextCell(cell, functionDataSum, 'col');
             iD = (i-1) + "," + (tbl.rows.length - 2);
-            cell.innerHTML = "<center><div type='col' id='" + iD +"'>" + activityDataSum + "</center>";   //HERE
+            cell.innerHTML = "<center><div type='col' id='" + iD +"'>" + functionDataSum + "</center>";   //HERE
             rowCount++;
             colCount = 1;
         }
@@ -92,9 +94,11 @@ function calculate(){
     }
 
     var row = tbl.insertRow(tbl.rows.length);
+    rowCount = tbl.rows.length - 3;
 
     for(let i = 0; i < tbl.rows[0].cells.length; i++)
     {
+        colCount = i - 1;
         if(i == 0){
             createTextCell(row.insertCell(i), "% of Effort", 'col');
         }
@@ -105,8 +109,19 @@ function calculate(){
             createTextCell(row.insertCell(i), "100%", 'col');
         }
         else{
-            //perform calculations FIRST and add them into these boxes
-            createTextCell(row.insertCell(i), "0%", 'col');
+            
+            for(let j = 0; j < 2; j++)
+            {
+                totalData[j] = parseFloat(tbl.rows[tbl.rows.length-2].cells.item(colCount+1).innerText);
+                colCount = numActivities + 1;
+            }
+
+            totalDataPercentage = (totalData[0] / totalData[1]) * 100
+            totalDataPercentage = totalDataPercentage.toFixed(1);
+
+            var perc = totalDataPercentage + "%";
+
+            createTextCell(row.insertCell(i), perc, 'col');
         }
     }
 }

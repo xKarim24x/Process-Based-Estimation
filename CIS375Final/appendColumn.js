@@ -21,7 +21,7 @@ function appendColumn() {
             var cell = tbl.rows[i].insertCell(tbl.rows[i].cells.length);
             createInputNbrCell(cell, 'col');
             iD = numActivities + "," + (i-1);
-            cell.innerHTML = "<center><input type='col' id='" + iD +"'></center>";
+            cell.innerHTML = "<center><input type='number' id='" + iD +"'></center>";
         }
     }
 }
