@@ -15,7 +15,8 @@ function appendRow() {
             createInputTxtCell(row.insertCell(i));
         }
         else if(i == 1){
-            createTextCell(row.insertCell(i), "", 'col');
+            // createTextCell(row.insertCell(i), "", 'col');
+            createDeleteCell(row.insertCell(i), (tbl.rows.length - 1),'col')
         }
         else{
             var cell = row.insertCell(i);

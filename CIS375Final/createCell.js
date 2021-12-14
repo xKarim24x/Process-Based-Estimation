@@ -26,3 +26,19 @@ function createTextCell(cell, text, style){
     div.setAttribute('className', style);
     cell.appendChild(div);
 }
+
+function createDeleteCell(cell, current, style){
+    var div = document.createElement('div');
+    var btn = document.createElement('button');
+    var div2 = document.createElement('div');
+    var image = document.createElement('img')
+    image.setAttribute('src', 'images/trash.svg');  
+    div2.appendChild(image);
+    btn.setAttribute('type', 'button');
+    btn.setAttribute('onclick', 'javascript:deleteRow('+current+')')
+    btn.appendChild(div2);
+    div.appendChild(btn);
+    div.setAttribute('class', style);
+    div.setAttribute('className', style);
+    cell.appendChild(div);
+}
